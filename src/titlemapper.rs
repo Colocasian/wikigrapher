@@ -133,6 +133,7 @@ impl TitleMapping {
                 Err(ref e) => error!("error while reading XML file: {}", &e),
                 _ => (),
             }
+            buf.clear();
         }
 
         info!("processed a total of {} pages", processed_pages);
