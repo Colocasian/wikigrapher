@@ -36,6 +36,6 @@ tags
 .ionide
 
 ### Custom project-related stuff ###
-*.bin
+*.cbor
 /dumps/
 /logs/
