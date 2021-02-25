@@ -1,0 +1,15 @@
+refresh_rate: 10 seconds
+
+appenders:
+  stdout:
+    kind: console
+
+  filer:
+    kind: file
+    path: "logs/debug.log"
+
+root:
+  level: info
+  appenders:
+    - stdout
+    - filer
