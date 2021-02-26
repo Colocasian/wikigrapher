@@ -139,4 +139,14 @@ impl TitleMapping {
         info!("processed a total of {} pages", processed_pages);
         Ok(titlemap)
     }
+
+    pub fn str_u(&self) -> &HashMap<String, u64> {
+        &self.str_u
+    }
+    pub fn u_str(&self) -> &HashMap<u64, String> {
+        &self.u_str
+    }
+    pub fn redirs(&self) -> &HashMap<String, String> {
+        &self.redirs
+    }
 }
