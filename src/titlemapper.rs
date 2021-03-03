@@ -77,12 +77,16 @@ impl TitleMapping {
                         page_title = Some(e.escaped().to_vec());
                     }
                     if in_id {
-                        match std::str::from_utf8(e.escaped()) {
-                            Ok(ref id_str) => match id_str.parse() {
-                                Ok(id_num) => page_id = Some(id_num),
-                                Err(e) => error!("could not parse id string to integer: {}", &e),
-                            },
-                            Err(e) => error!("could not parse id UTF-8 bytes: {}", &e),
+                        if page_id == None {
+                            match std::str::from_utf8(e.escaped()) {
+                                Ok(ref id_str) => match id_str.parse() {
+                                    Ok(id_num) => page_id = Some(id_num),
+                                    Err(e) => {
+                                        error!("could not parse id string to integer: {}", &e)
+                                    }
+                                },
+                                Err(e) => error!("could not parse id UTF-8 bytes: {}", &e),
+                            }
                         }
                     }
                 }

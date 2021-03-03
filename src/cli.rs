@@ -29,12 +29,6 @@ pub fn cli_app() -> App<'static, 'static> {
                         .help("Path of the WikiDump XML file")
                         .required(true)
                         .index(1),
-                )
-                .arg(
-                    Arg::with_name("TMAPFILE")
-                        .help("Path of the WikiDump TitleMap binary")
-                        .required(true)
-                        .index(2),
                 ),
         )
         .subcommand(
